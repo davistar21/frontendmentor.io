@@ -8,6 +8,11 @@ body{
 }
 html{
   font-size: 16px;
+  scroll-behavior: smooth;
+}
+a{
+  text-decoration: none;
+  color: unset;
 }
 input{
   font-family: 'sansa';

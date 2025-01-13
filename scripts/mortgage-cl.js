@@ -23,7 +23,6 @@ function mortgageCalculator(principal, rate, time, mortgageType="repayment") {
     
   }
   return `
-  <>
     <div>
       <p>Your monthly repayments</p>
       <div class="monthly-repayments">$${monthlyRepayment}</div>
@@ -33,11 +32,11 @@ function mortgageCalculator(principal, rate, time, mortgageType="repayment") {
       <p>Total you'll repay over the term</p>
       <div class="total-repayments">$${totalRepayment}</div>
     </div>
-  </>
   `
 }
 
 calculateButtonElem.addEventListener('click', () => {
+  // document.getElementById("resultDisplay").scrollIntoView({ behavior: "smooth" });
   if(radio.value == "repayment") {
     document.querySelector(".actual-result-display").innerHTML = mortgageCalculator(
       mortgageAmount.value,
