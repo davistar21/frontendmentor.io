@@ -12,20 +12,29 @@
     <div class="player-information">
       <div class="header">
         <h1>Mortgage Calculator</h1>
-        <div>Clear All</div>
+        <div id="clear-button">Clear All</div>
       </div>
       <form action="" id="mortgageForm">
         <div class="form-item mortgage-amount-item">
           <label for="mortgage-amount">Mortgage Amount</label>
-          <input type="number" name="mortgageAmount" id="mortgageAmount">
+          <div class="input-div">
+            <span>$</span>
+            <input type="number" name="mortgageAmount" id="mortgageAmount" required> 
+          </div>
         </div>
         <div class="form-item mortgage-term-item">
           <label for="mortgage-term">Mortgage Term</label>
-          <input type="number" name="mortgageTerm" id="mortgageTerm">
+          <div class="input-div">
+            <input type="number" name="mortgageTerm" id="mortgageTerm" required>
+            <span>years</span>
+          </div>
         </div>
         <div class="form-item interest-rate-item">
           <label for="interest-rate">Interest Rate</label>
-          <input type="number" name="interestRate" id="interestRate">
+          <div class="input-div">
+            <input type="number" name="interestRate" id="interestRate" required>
+            <span>%</span>
+          </div>
         </div>
         <div class="form-item mortgage-type-item">
           <label for="mortgage-type">Mortgage Type</label>

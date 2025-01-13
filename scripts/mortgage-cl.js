@@ -1,5 +1,5 @@
 
-let mortgageForm = document.getElementById('mortgageForm');
+const mortgageForm = document.getElementById('mortgageForm');
 
 let {mortgageAmount, mortgageTerm, interestRate, radio} = mortgageForm
 let calculateButtonElem = document.querySelector(".calculate-button")
@@ -37,6 +37,8 @@ function mortgageCalculator(principal, rate, time, mortgageType="repayment") {
 
 calculateButtonElem.addEventListener('click', () => {
   // document.getElementById("resultDisplay").scrollIntoView({ behavior: "smooth" });
+  checkFormValidity()
+
   if(radio.value == "repayment") {
     document.querySelector(".actual-result-display").innerHTML = mortgageCalculator(
       mortgageAmount.value,
@@ -57,4 +59,28 @@ calculateButtonElem.addEventListener('click', () => {
 
 })
 
+
+const requiredInputs = mortgageForm.querySelectorAll("input[required]");
+console.log(requiredInputs)
+// Function to check if all fields are filled
+function checkFormValidity() {
+  let allFilled = true;
+  requiredInputs.forEach(input => {
+    if (!input.value.trim()) {
+      allFilled = false;
+      input.classList.add("error");
+    } else {
+      input.classList.remove("error");
+    }
+  });
+}
+
+document.getElementById('clear-button').addEventListener('click', ()=>{
+  const radioButtons = document.getElementsByName('radio').forEach(element => {
+    element.checked = false;
+  })
+  requiredInputs.forEach(input => {
+    input.value = ''
+  })  
+})
 
