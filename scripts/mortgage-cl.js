@@ -19,7 +19,7 @@ function mortgageCalculator(principal, rate, time, mortgageType="repayment") {
   totalRepayment = formatCurrency(monthlyRepayment * numberOfPayments);
   if (mortgageType == 'interest-rate'){
     monthlyRepayment = formatCurrency((principal * rate) / 100 / 12);
-    totalRepayment = formatCurrency(parseInt(principal) + monthlyRepayment * numberOfPayments);
+    totalRepayment = formatCurrency(Number(principal) + monthlyRepayment * numberOfPayments);
     
   }
   return `
@@ -78,7 +78,7 @@ function checkFormValidity() {
 }
 
 document.getElementById('clear-button').addEventListener('click', ()=>{
-  const radioButtons = document.getElementsByName('radio').forEach(element => {
+  document.getElementsByName('radio').forEach(element => {
     element.checked = false;
   })
   requiredInputs.forEach(input => {
