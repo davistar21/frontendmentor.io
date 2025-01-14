@@ -319,4 +319,7 @@ input[type="radio"]:checked + label::after{
   .player-information form div label, input, span{
     font-size: 0.7rem;
   }
+  .player-information input, .player-information span{
+    border: 2px solid black;
+  }
 }
